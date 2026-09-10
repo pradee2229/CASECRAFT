@@ -1,0 +1,434 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f8fa;
+  color: #173f4a;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+header {
+  background: #115766;
+  color: white;
+  text-align: center;
+  padding: 28px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 38px;
+}
+
+header p {
+  margin: 6px 0 0;
+  font-size: 20px;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  padding: 20px;
+  background: white;
+  box-shadow: 0 2px 8px #ccc;
+}
+
+nav button,
+.primary,
+.backend,
+.secondary,
+.generate {
+  border: none;
+  border-radius: 8px;
+  padding: 12px 22px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+nav button {
+  background: #e5f1f4;
+  color: #115766;
+}
+
+nav button.active,
+.primary,
+.generate {
+  background: #115766;
+  color: white;
+}
+
+.hero {
+  max-width: 1000px;
+  margin: 100px auto;
+  text-align: center;
+  padding: 40px;
+}
+
+.hero h2 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 21px;
+  color: #70828a;
+  line-height: 1.6;
+}
+
+.primary {
+  margin-top: 25px;
+  font-size: 18px;
+}
+
+.backend {
+  display: block;
+  margin: 20px auto;
+  background: #dceff3;
+  color: #115766;
+}
+
+.message {
+  margin: 20px auto;
+  padding: 15px;
+  background: #e0f5e5;
+  border-radius: 8px;
+  max-width: 500px;
+}
+
+.form-container {
+  max-width: 900px;
+  margin: 40px auto;
+  background: white;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px #d5dfe2;
+}
+
+.form-container h2 {
+  font-size: 34px;
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  color: #71838a;
+  margin-bottom: 30px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin: 15px 0 8px;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #cbd9dd;
+  border-radius: 7px;
+  font-size: 15px;
+}
+
+textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+.section {
+  margin-top: 30px;
+}
+
+.section h3 {
+  border-bottom: 2px solid #e4eef0;
+  padding-bottom: 10px;
+}
+
+.upload-box {
+  margin-top: 30px;
+  padding: 25px;
+  text-align: center;
+  border: 2px dashed #9dbbc2;
+  border-radius: 12px;
+  background: #f7fbfc;
+}
+
+.secondary {
+  margin-left: 15px;
+  background: #dceff3;
+  color: #115766;
+}
+
+.generate {
+  width: 100%;
+  margin-top: 30px;
+  padding: 16px;
+  font-size: 18px;
+}
+
+@media (max-width: 700px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h2 {
+    font-size: 34px;
+  }
+
+  nav {
+    flex-wrap: wrap;
+  }
+
+  .form-container {
+    margin: 20px;
+    padding: 25px;
+  }
+}
+.ocr-result {
+  margin-top: 25px;
+  padding: 20px;
+  background: #f4fafb;
+  border: 1px solid #c8dfe3;
+  border-radius: 10px;
+}
+
+.ocr-result textarea {
+  width: 100%;
+  min-height: 250px;
+  padding: 15px;
+  margin-top: 10px;
+  resize: vertical;
+}
+
+.secondary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.medical-data {
+  margin-top: 15px;
+}
+
+.medical-data p {
+  margin: 10px 0;
+}
+
+.alert-box {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 8px;
+  font-weight: bold;
+  background: #fff3cd;
+  border: 1px solid #ffc107;
+}
+.summary-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.summary-container h2 {
+  margin-bottom: 25px;
+}
+
+.summary-card {
+  background: white;
+  padding: 25px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.summary-card h3 {
+  margin-bottom: 15px;
+}
+
+.summary-card p {
+  margin: 10px 0;
+  line-height: 1.6;
+}
+
+.disclaimer {
+  font-size: 13px;
+  opacity: 0.7;
+  margin-top: 20px;
+}
+/* Patient Records Table */
+
+.patient-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 15px;
+}
+
+.patient-table th {
+  background: #e5f1f4;
+  color: #115766;
+  padding: 14px 10px;
+  text-align: center;
+  border-bottom: 2px solid #c8dfe3;
+}
+
+.patient-table td {
+  padding: 14px 10px;
+  text-align: center;
+  vertical-align: top;
+  border-bottom: 1px solid #e1eaed;
+}
+
+.patient-table tr:hover {
+  background: #f7fbfc;
+}
+
+.record-item {
+  padding: 5px 0;
+  line-height: 1.5;
+}
+
+.patient-table th:nth-child(7),
+.patient-table td:nth-child(7) {
+  min-width: 140px;
+}
+
+.patient-table th:nth-child(8),
+.patient-table td:nth-child(8) {
+  min-width: 100px;
+}
+
+.patient-table th:nth-child(9),
+.patient-table td:nth-child(9) {
+  min-width: 150px;
+}
+
+/* Allow horizontal scrolling on smaller screens */
+
+.summary-card {
+  overflow-x: auto;
+}
+.record-item {
+  margin-bottom: 8px;
+}
+
+.priority-critical {
+  color: #c62828;
+  font-weight: bold;
+}
+
+.priority-attention {
+  color: #e65100;
+  font-weight: bold;
+}
+
+.priority-normal {
+  color: #2e7d32;
+  font-weight: bold;
+}
+/* Mobile Responsive Design */
+
+@media (max-width: 768px) {
+
+  header h1 {
+    font-size: 28px;
+  }
+
+  header p {
+    font-size: 14px;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  nav button {
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+
+  .hero,
+  .summary-container {
+    padding: 20px 12px;
+  }
+
+  .dashboard {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .dashboard-card {
+    padding: 15px 10px;
+  }
+
+  .dashboard-card h3 {
+    font-size: 14px;
+  }
+
+  .dashboard-card p {
+    font-size: 24px;
+  }
+
+  .patient-table {
+    font-size: 13px;
+  }
+
+  .patient-table th,
+  .patient-table td {
+    padding: 10px 8px;
+  }
+
+  .search-box input {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .summary-card {
+    padding: 15px;
+  }
+
+}
+/* Print Design */
+
+@media print {
+
+  nav,
+  button {
+    display: none !important;
+  }
+
+  header {
+    background: white !important;
+    color: black !important;
+    border-bottom: 2px solid #000;
+  }
+
+  .app {
+    width: 100%;
+  }
+
+  .summary-container {
+    max-width: 100%;
+    padding: 10px;
+  }
+
+  .summary-card {
+    box-shadow: none !important;
+    border: 1px solid #ccc;
+    page-break-inside: avoid;
+  }
+
+  .disclaimer {
+    color: black !important;
+  }
+}
