@@ -5,6 +5,7 @@ import pytesseract
 import io
 import re
 import sqlite3
+import os
 DATABASE = "patients.db"
 
 
@@ -69,14 +70,21 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-pytesseract.pytesseract.tesseract_cmd = (
-    r"C:\Program Files\Tesseract-OCR\tesseract.exe"
-)
+import os
+
+tesseract_cmd = os.getenv("TESSERACT_CMD")
+
+if tesseract_cmd:
+    pytesseract.pytesseract.tesseract_cmd = tesseract_cmd
+else:
+    windows_tesseract = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
+    if os.path.exists(windows_tesseract):
+        pytesseract.pytesseract.tesseract_cmd = windows_tesseract
 
 
 @app.get("/")
 def home():
-    return {"message": "MedHistory AI Backend is running"}
+    return {"message": "CASECRAFT Backend is running"}
 
 
 @app.post("/upload-report")
